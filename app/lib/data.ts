@@ -158,7 +158,8 @@ export async function fetchInvoiceById(id: string) {
       // Convert amount from cents to dollars
       amount: invoice.amount / 100,
     }));
-
+    // so that we can see the invoice that does not exist. 
+    console.log(invoice); // Invoice is an empty array []
     return invoice[0];
   } catch (error) {
     console.error('Database Error:', error);
